@@ -1,0 +1,67 @@
+Prerequisite FOR UUS :
+
+	1. the steps to install the required software has been defined in the Uus_Prerequiste_Installation
+
+Steps for UUS SETUP in local : 
+
+1.	clone a project in your workspace using the command : https://github.com/myanatomyforall/UnifiedUserService.git
+
+2.	Take a backup of your local users from the mapit in a csv file.
+
+	2.1	To create a csv file use following command in usersdata questionDb
+		copy (select email,passwordhash,name,contactnumber,dtype,active,registrationtime from appuser where registereduser=true) To '<path>/mapitdata2.csv' With CSV DELIMITER ',';
+
+	2.2	Paste the generated users csv file for mapit into the desired folder
+	
+	2.3	Get the match user csv file and place it with the same directory as mapitdata2.csv
+	
+	2.4	enter the BASE_PATH as your chosen directory path for the migration in V2__Populate_IntermediateDate_Table class
+	
+3.	Create a new Database named as uus in postgresql
+
+4.	For Backend(uus-web)
+	
+		4.1.	Changes to be made in application.conf file :
+			
+			4.1.1	give the correct credential for the database for the uus :
+				
+						db.connection.url=jdbc:postgresql://localhost:5432/uus
+						db.connection.username=<db_username>
+						db.connection.password=<db_password>
+			
+			4.1.2	give your credential for the uus smtp
+			
+						smtp.user=<smtp_username>
+						smtp.password=<smtp_password>
+					
+			4.1.3	give the uus server domain
+					
+						uus.domain = <protocol>//<frontend_domain>:<frontend_port> 
+						uus.main = <protocol>//<backend_domain>:<backend_port>
+			
+		4.2	once successfully completed open the command line 
+					
+			4.2.1	goto to the uus-web directory
+			4.2.2	run the following command to compile your project :
+						mvn clean install
+			
+			4.2.3 	after the compilation is completed the command to run the application is :
+						mvn ninja:run (this will run the application with the default 8080 port)
+					
+			4.2.4 	If the required port is busy or you want to run on some other port, you can use the following command :
+						mvn ninja:run -Dninja.port=<port>
+					
+					
+5. For Frontend(uus-front)
+		
+		5.1	Changes to be made in constants.service.ts
+			
+			5.1.1	give the correct path for following variables :
+						baseAppUrl : string = <uus_backend_url>
+						uusDistanceLocation : string = '';
+					
+		5.2	Install the angular cli for using angular command line operations , use the following command to install :
+				npm install -g @angular/cli ( this will install it globally)
+			
+		5.3 Finally run the system using the following script :
+				ng serve

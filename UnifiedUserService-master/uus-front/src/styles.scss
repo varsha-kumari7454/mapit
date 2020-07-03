@@ -1,0 +1,48 @@
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600,700&display=swap');
+
+body,
+html {
+  height: 100%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
+
+.error {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+// .container {
+//     width: 80%;
+//     margin: 0 auto;
+//     padding: 1.3em;
+//     display: grid;
+//     grid-template-columns: 30% auto;
+
+//     a {
+//         color: white;
+//     }
+// }
+
+// section {
+//     width: 80%;
+//     margin: 0 auto;
+//     padding: 2em;
+// }

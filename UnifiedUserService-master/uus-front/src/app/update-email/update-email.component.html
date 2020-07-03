@@ -1,0 +1,36 @@
+<div class="center">Update Email
+<p>
+ From <input type="text" (input)="email=$event.target.value" (input)="validation()"> 
+</p>
+ <div *ngIf = "!isValid " class="error" >PLease Enter valid email</div> 
+<p>
+  To <input type="text" (input)="newEmail=$event.target.value" (input)="validationNew()"> 
+ </p>
+ <div *ngIf = "!isNewEmailValid " class="error" >PLease Enter valid email</div>
+ <p>
+  Comment <input type="text" (input)="comment=$event.target.value"> 
+ </p>
+ <button  (click)="updateEmail()" [disabled]="!isValid || !isNewEmailValid || email == '' || newEmail == ''" >Update</button>
+</div>
+ <p style="width:1000px;"></p>
+ <div class="logoutButton">
+  <button  (click)="logout()"  >logout</button>
+</div>
+ <div class="container">
+  <table id="customers">
+    <thead>
+        <tr>
+          <th>fromEmail</th>
+          <th>toEmail</th>
+          <th> status</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let updateEmailHistory of updateEmailHistories ">
+        <td>{{ updateEmailHistory.fromEmail }}</td>
+        <td>{{ updateEmailHistory.toEmail }}</td>
+        <td>{{ updateEmailHistory.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

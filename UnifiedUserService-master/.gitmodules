@@ -1,0 +1,3 @@
+[submodule "uus-web/src/main/uus_frontend"]
+	path = uus-web/src/main/uus_frontend
+	url = /home/nikhil/Desktop/mapit/UnifiedUserService/uus-web/src/main/uus_frontend

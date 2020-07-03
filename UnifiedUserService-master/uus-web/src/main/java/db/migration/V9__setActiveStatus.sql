@@ -1,0 +1,1 @@
+UPDATE registeredappuser set active=true where active is NULL;

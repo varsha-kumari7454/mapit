@@ -1,0 +1,45 @@
+.error {
+    margin-top: -15px;
+    display: block;
+    font-size: .7em;
+    color: red;
+    font-weight: 700;
+    position: relative;
+  }
+  #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  #customers tr:hover {background-color: #ddd;}
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  .logoutButton {
+
+    padding: 2px;
+    display:block;
+    background-color: green;
+    color: white;
+    text-align:center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid rgb(21, 24, 21);
+  padding: 10px;
+  text-align: center;
+  background-color: #23c62373;
+}

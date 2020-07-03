@@ -1,0 +1,104 @@
+Uus_Prerequiste_Installation
+
+For Window Users :
+	
+	1. 	Install JAVA 10 on Windows computers by performing the actions described in the following topics:		
+		
+		1.1	Downloading the JDK Installer
+			
+				1.1.1 In a browser, go to the Java SE Development Kit 10 Downloads page and click Accept License Agreement. Under the Download menu, click the Download 
+					link that corresponds to the .exe for your version of Windows.
+			
+				1.1.2 Verify the successful completion of file download by comparing the file size on the download page and your local drive.
+		
+		1.2 Running the JDK Installer
+			
+			1.2.1	You must have administrator privilage to install the JDK on Microsoft Windows.
+					
+			1.2.2	Start the JDK 10 installer by double-clicking the installer's icon or file name in the download location.
+			
+			1.2.3	Follow the instructions provided by the Installation wizard. The JDK includes the JavaFX SDK, a 
+					private JRE, and the Java Mission Control tools suite. The installer integrates the JavaFX SDK into the JDK installation directory.
+				  
+			1.2.4	After the installation is complete, delete the downloaded file to recover the disk space.
+		
+		1.3	Setting the JAVA_HOME Environment Variable
+			
+			1.3.1	As Maven takes Java Path from the JAVA_HOME Environment variable , you can set the specific varible and can switch between java version 
+					using the following command :
+						setx JAVA_HOME "<your_jdk_path>"
+						Example : setx JAVA_HOME "C:\Program Files\Java\jdk1.7.0_80"
+			
+			1.3.2	After setting the required environment variable check for current JAVA_HOME version in a new terminal,
+					using command :
+						echo %JAVA_HOME%
+			
+	
+	2.	Install Maven 
+		
+		2.1	Visit Maven official website, download the Maven zip file, for example : apache-maven-3.6.0-bin.zip.
+		
+		2.2	Unzip it to a folder. In this article, we are using c:\opt\apache-maven-3.6.0
+		
+		2.3	Add a MAVEN_HOME system variables, and point it to the Maven folder.
+		
+			2.3.1	Press Windows key, type adva and clicks on the View advanced system settings
+			
+			2.3.2	In System Properties dialog, select Advanced tab and clicks on the Environment Variables... button.
+			
+			2.3.3	In “Environment variables” dialog, System variables, Clicks on the New... button and add a MAVEN_HOME variable and point it to c:\opt\apache-maven-3.6.0
+			
+			2.3.4	In system variables, find PATH, clicks on the Edit... button. In “Edit environment variable” dialog, clicks on the New button and add this %MAVEN_HOME%\bin
+			
+		
+		2.4	Verification , After Completion  start a new command prompt, type mvn –version :
+		
+		2.5	FAQS :
+		
+			2.5.1	‘mvn’ is not recognized as an internal or external command?
+					> mvn -version
+					> 'mvn' is not recognized as an internal or external command,
+					  operable program or batch file.
+					  
+					Solution : Refer to Step 2.3.4, make sure the %MAVEN_HOME%\bin is added to the PATH system variable.
+					
+			2.5.2	The JAVA_HOME environment variable is not defined correctly
+			2.5.2	The JAVA_HOME environment variable is not defined correctly
+
+					> mvn -version
+					The JAVA_HOME environment variable is not defined correctly
+					This environment variable is needed to run this program
+					NB: JAVA_HOME should point to a JDK not a JRE
+					
+					Solution : Refer to Step 1.3, make sure JDK is installed and the JAVA_HOME system variable is configured.
+					
+	
+	3.	Install Node.js on Windows
+			
+			3.1	Go to the site https://nodejs.org/en/download/ and download the necessary binary files. 
+			
+			3.2	Double click on the downloaded .msi file to start the installation. Click the Run button on the first screen to begin the installation.
+			
+			3.3	In the next screen, click the "Next" button to continue with the installation
+			
+			3.4	In the next screen, Accept the license agreement and click on the Next button.
+			
+			3.5	In the next screen, choose the location where Node.js needs to be installed and then click on the Next button.
+			
+				3.5.1	First, enter the file location for the installation of Node.js. 
+						This is where the files for Node.js will be stored after the installation.
+				
+				3.5.2	Click on the Next button to proceed ahead with the installation.
+			
+			3.6	Accept the default components and click on the Next button.
+			
+			3.7	In the next screen, click the Install button to start the installation.
+			
+			3.8	Click the Finish button to complete the installation.
+			
+			3.9	Fix the path for npm
+					
+				3.9.1 get the path from npm command:
+						npm config get prefix
+				
+				3.9.2 set the generated path to the PATH Environment variable.
